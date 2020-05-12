@@ -1,4 +1,17 @@
 <template>
+
+  <div class="initems">C M Y Y J C C</div>
+
+</template>
+
+<style>
+  .initems {
+    display: flex;justify-content: center;align-items: center;height: 91vh;color: #ffbaba;font-size: 30px;font-family: '宋体';
+  }
+</style>
+
+<!--
+<template>
   <div class="dashboard-editor-container">
 
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
@@ -96,3 +109,4 @@ export default {
   }
 }
 </style>
+-->
