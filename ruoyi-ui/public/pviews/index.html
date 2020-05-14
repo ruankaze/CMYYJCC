@@ -6,13 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>测试页</title>
   <style>
+    body {
+      display: flex;justify-content: center;align-items: center;height: 98vh;color: #ffbaba;font-family: '宋体';cursor: default;font-size: 12px;
+    }
 
+    .items {
 
+    }
+
+    .items div {
+      margin: 20px;
+    }
+
+    .items div div {
+      margin: 0px 20px 0px 20px;width: 350px;display: inline-block;text-align: center;
+    }
   </style>
 </head>
 <body>
-
+<div class="items"></div>
 </body>
+</html>
+
 <script src="js/jquery-3.3.1.js"></script>
 <script>
 
@@ -24,9 +39,11 @@
     async: false,
     dataType: 'json',
     success: function (res) {
-      console.log(res);
+      let row = res.rows;
+      for (let i = 0; i < row.length; i++) {
+        $(".items").append("<div><div>" + row[i]['nickName'] + "</div><div>" + row[i]['userName'] + "</div><div>" + row[i]['remark'] + "</div><div>" + row[i]['createTime'] + "</div></div>");
+      }
     }
   });
 
 </script>
-</html>
