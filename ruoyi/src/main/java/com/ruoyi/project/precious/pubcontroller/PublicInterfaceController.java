@@ -2,8 +2,8 @@ package com.ruoyi.project.precious.pubcontroller;
 
 import com.ruoyi.framework.web.controller.BaseController;
 import com.ruoyi.framework.web.page.TableDataInfo;
-import com.ruoyi.project.precious.domain.Approval;
-import com.ruoyi.project.precious.mapper.ApprovalDao;
+import com.ruoyi.project.precious.mapper.PublicDao;
+import com.ruoyi.project.system.domain.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,22 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PublicInterfaceController extends BaseController {
 
     @Autowired
-    private ApprovalDao npads;
+    private PublicDao pd;
 
-    /**
-     * @Function: TODO
-     * @description: node project approval paging
-     *
-     * @author: NingZe
-     * @date: 2020/5/12 0012 11:24
-     * @params: [npal]
-     * @version: 02.06
-     * @return: com.ruoyi.framework.web.page.TableDataInfo
-     */
-    @RequestMapping("/paging")
-    public TableDataInfo paging(Approval npal) {
+    @RequestMapping("/findUserPaging")
+    public TableDataInfo findUserPaging(SysUser c) {
         startPage();
-        return getDataTable(npads.findApprovalPaging(npal));
+        return getDataTable(pd.findUserPaging(c));
     }
 
 }

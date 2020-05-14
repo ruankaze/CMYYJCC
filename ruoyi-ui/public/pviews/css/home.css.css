@@ -1,0 +1,9 @@
+.cc-logo{
+		cursor: pointer;
+		display: block;
+		width: 142px;
+		height: 34px;
+		background-image: url(../image/loginIco.png);
+		background-size: 100% 100%;
+		float: left;
+	}
